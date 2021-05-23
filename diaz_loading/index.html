@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diaz Load</title>
+    <style>
+      @keyframes spinner {
+      0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+      }
+      100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+      }
+      }
+      .spin::before {
+      animation: 1.5s linear infinite spinner;
+      animation-play-state: inherit;
+      border: solid 2px rgba(255, 255, 255);
+      border-bottom: solid 2px #570202;
+      border-radius: 50%;
+      content: "";
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 2px);
+      -webkit-box-shadow: 2px 1px 2px #570202;
+	-moz-box-shadow: 2px 1px 2px #570202;
+	box-shadow: 2px 1px 2px #570202;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+
+	-webkit-transition: box-shadow .4s ease;
+	-moz-transition: box-shadow .4s ease;
+	-o-transition: box-shadow .4s ease;
+	-ms-transition: box-shadow .4s ease;
+	transition: box-shadow .4s ease;
+      will-change: transform;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spin"></div>
+  </body>
+</html>
+
+</head>
+<body>
+
+<!-- ADACIKLAR -->
+<div class="page-bg-diaz"></div>
+
+
+<script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js'></script>
+<script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js'></script>
+<script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js'></script>
+
+<!-- MÜZİK -->
+
+<audio id="leson" src="diaz-music.mp3" autoplay="true" hidden="true" loop="true"/>
+<script>
+
+var play = false;
+var myAudio = document.getElementById("leson");
+
+myAudio.volume = 0.1;
+
+function onKeyDown(event) {
+        switch (event.keyCode) {
+            case 32: //SpaceBar                    
+                if (play) {
+                    myAudio.pause();
+                    play = false;
+                } else {
+                    myAudio.play();
+                    play = true;
+                }
+                break;
+        }
+  return false;
+}
+
+window.addEventListener("keydown", onKeyDown, false);
+</script>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="./script.js"></script>
